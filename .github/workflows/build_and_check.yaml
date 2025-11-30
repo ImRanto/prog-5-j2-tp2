@@ -20,4 +20,4 @@ jobs:
 
       - name: Compile and check with Maven
         run: |
-          mvn compile
+          mvn compile -X

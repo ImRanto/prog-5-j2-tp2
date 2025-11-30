@@ -1,12 +1,15 @@
-name: Java Build
+name: Java 24 Build and Format Check
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -15,6 +18,15 @@ jobs:
         with:
           java-version: '24'
           distribution: 'temurin'
+          cache: maven
 
       - name: Build with Maven
         run: mvn compile
+
+      - name: Check Java formatting with Google Java Format
+        run: |
+          # Google Java Format
+          wget -O google-java-format.jar https://github.com/google/google-java-format/releases/download/v1.23.0/google-java-format-1.23.0-all-deps.jar
+          
+          # Vérifier
+          java -jar google-java-format.jar --dry-run --set-exit-if-changed $(find . -name "*.java")

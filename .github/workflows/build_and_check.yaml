@@ -1,11 +1,11 @@
-name: Java build and CI Check
+name: Java Build Check
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  quality-check:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +18,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Compile and check with Maven
-        run: |
-          mvn compile -X
+      - name: Build with Maven
+        run: mvn compile

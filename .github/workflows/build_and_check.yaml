@@ -2,7 +2,7 @@ name: Java build and CI Check
 
 on:
   push:
-    branches: main
+    branches: [ main ]
 
 jobs:
   quality-check:

@@ -9,7 +9,7 @@ Un système de gestion de location d'objets simple développé en Java
 -  Système de location avec suivi
 -  Architecture modulaire (Entities, Services)
 -  Formatage automatique avec Google Java Format (lance ``format.bat/format.sh``)
--  CI/CD avec GitHub Actions
+-  CI avec GitHub Actions
 
 ## Tech utilisé
 
